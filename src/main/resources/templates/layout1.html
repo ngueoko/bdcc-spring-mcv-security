@@ -34,6 +34,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
                     </ul>
                 </li>
             </ul>
+
           <ul>
               <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -44,7 +45,15 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
                   </ul>
               </li>
           </ul>
+
         </div>
+        <di  class="container-fluid offset-5">
+            <form class="d-flex" method="get" th:action="@{/user/index}">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword"
+                       th:value="${keyword}">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </di>
     </div>
 </nav>
 <div class="p-3" layout:fragment="content1">
