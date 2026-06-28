@@ -29,11 +29,13 @@
       <td th:text="${p.price}"></td>
       <td th:text="${p.quantity}"></td>
       <td>
+        <a class="btn btn-primary"  th:text=" Edit "
+           th:href="@{/admin/edit(id=${p.id})}" sec:authorize="hasRole('ADMIN')"></a>
+
       <a class="btn btn-danger" onclick="return confirm('Voulez-vous supprimer ?')" th:text="Delete"
          th:href="@{/admin/delete(id=${p.id})}" sec:authorize="hasRole('ADMIN')"></a>
 
-        <a class="btn btn-primary"  th:text=" Edit "
-           th:href="@{/admin/edit(id=${p.id})}" sec:authorize="hasRole('ADMIN')"></a>
+
     </td>
     </tr>
     </tbody>
